@@ -13,7 +13,7 @@ const PrivateRoute = ({ allowedRoles = [] }) => {
     }
 
     if (allowedRoles.length > 0 && !allowedRoles.includes(user.role)) {
-        return <Navigate to="/" replace />;
+        return <Navigate to="/courriers" replace />;
     }
 
     return <Outlet />;

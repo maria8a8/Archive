@@ -21,16 +21,18 @@ function App() {
 
           <Route element={<PrivateRoute />}>
             <Route element={<DashboardLayout />}>
-              <Route path="/" element={<Dashboard />} />
+              {/* Dashboard et Users réservés aux admins */}
+              <Route element={<PrivateRoute allowedRoles={['admin']} />}>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/users" element={<UserManagement />} />
+              </Route>
+
+              {/* Routes accessibles à tous les utilisateurs authentifiés */}
               <Route path="/courriers" element={<CourrierManagement />} />
               <Route path="/lignes" element={<LigneManagement />} />
               <Route path="/postes" element={<PosteManagement />} />
               <Route path="/search" element={<GlobalSearch />} />
               <Route path="/settings" element={<Settings />} />
-
-              <Route element={<PrivateRoute allowedRoles={['admin']} />}>
-                <Route path="/users" element={<UserManagement />} />
-              </Route>
             </Route>
           </Route>
         </Routes>

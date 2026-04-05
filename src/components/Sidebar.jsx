@@ -39,7 +39,7 @@ const Sidebar = () => {
     }, []);
 
     const navItems = [
-        { name: 'Tableau de bord', icon: LayoutDashboard, path: '/', roles: ['admin', 'archiviste', 'consultant'] },
+        { name: 'Tableau de bord', icon: LayoutDashboard, path: '/', roles: ['admin'] },
         { name: 'Courriers', icon: Mail, path: '/courriers', roles: ['admin', 'archiviste', 'consultant'] },
         { name: 'Lignes', icon: Map, path: '/lignes', roles: ['admin', 'archiviste', 'consultant'] },
         { name: 'Postes', icon: Database, path: '/postes', roles: ['admin', 'archiviste', 'consultant'] },
